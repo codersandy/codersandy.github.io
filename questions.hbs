@@ -1,0 +1,19 @@
+<h1>Question</h1>
+{{#each model as |question|}}
+
+  {{#radio-button
+  value=question.option1
+  groupValue=flavor
+  changed="flavorToggled"}}
+  question.option1
+{{/radio-button}}
+
+{{#radio-button
+  value=question.option2
+  groupValue=flavor
+  changed="flavorToggled"}}
+  question.option2
+ {{/radio-button}}
+
+{{/each}}
+ 
