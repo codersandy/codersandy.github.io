@@ -1,0 +1,38 @@
+<div>
+{{#radio-button
+	name="options" value=option1
+		groupValue=choices
+		changed="setClicked"}}
+{{option1}}
+{{/radio-button}}
+{{#radio-button
+	name="options" value=option2
+		groupValue=choices
+		changed="setClicked"}}
+{{option2}}
+{{/radio-button}}
+{{#radio-button
+	name="options" value=option3
+		groupValue=choices
+		changed="setClicked"}}
+{{option3}}
+{{/radio-button}}
+</div>
+<div>
+{{#if selected}} 
+{{#if (compare-int nextPageId '<' 4) }}
+<button>{{#link-to 'questions.q1' nextPageId}}NEXT{{/link-to}}</button>
+{{ else }}
+<button>{{#link-to 'results'}}NEXT{{/link-to}}</button>
+{{/if}} 
+{{/if}}
+</div>
+<div>
+{{#if (compare-int nextPageId '<' 4) }}
+<button>{{#link-to 'questions.q1' nextPageId }} Pass {{/link-to}}</button>
+{{/if}}
+</div>
+
+<div>
+<button>{{#link-to 'home'}} QUIT {{/link-to}}</button>
+</div>

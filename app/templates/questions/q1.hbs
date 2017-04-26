@@ -1,7 +1,5 @@
-<div class="jumbo show-listing">
-  <h2 class="title">{{model.question}}</h2>
-	<label><input type="radio"/> {{model.option1}}</label>
-	<label><input type="radio"/> {{model.option2}}</label>
-   <label><input type="radio"/> {{model.option3}}</label>
-   </div>
-  
+<div>
+<h2 class="title">Question {{model.id}}. {{model.question}}</h2>
+{{button-select nextPageId=(sum model.id) option1=model.option1 option2=model.option2 option3=model.option3}}
+</div>
+
