@@ -1,8 +1,12 @@
-<h1>QUIZ</h1>
-{{#link-to 'questions' '1'}}
+<label for="username">Enter your name</label>
+{{input type="text" value=firstName disabled=entryNotAllowed size="50"}}
+<br>
+<button>{{#link-to "questions.q1" 1 }}
 Start Now
 {{/link-to }}
+</button>
+<button>
 {{#link-to 'help' class='help'}}
 Help
 {{/link-to}}
-{{#link-to 
+</button>
