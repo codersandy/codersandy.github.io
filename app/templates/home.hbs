@@ -1,8 +1,28 @@
-<label for="identification">Login</label>
-<input id='identification' placeholder='Enter Login'/>
-{{#link-to "questions.q1" 1 }}
-Start Now
-{{/link-to }}
-{{#link-to 'help' class='help'}}
-Help
-{{/link-to}}
+<label for="username">Enter your name</label>
+<br>
+	{{input type="text" value=firstName size="50"}}
+	<br>
+		<br>
+			<div>
+				<style>
+					button {background-color:#3399ff;
+					border-radius:20px;
+					border-size:2px;
+					color: black;
+					font-style: verdana;
+					padding: 12px 23px;
+					text-align: center;
+					text-decoration: none;
+					display: inline-block;
+					font-size: 15px;cursor:pointer}
+				</style>
+				<button {{ action "saveUser"}}>
+					Start Game
+				</button>
+				<br>
+					<button>
+						{{#link-to 'help' class='help'}}
+						Help
+						{{/link-to}}
+					</button>
+			</div>
