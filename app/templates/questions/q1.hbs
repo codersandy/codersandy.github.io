@@ -30,19 +30,19 @@
 <div>
 	{{#if selected}}
 	{{#if (compare-int (sum model.id) '<' 4) }}
-	<button {{ action "showNextQuestion" (sum model.id) }} >Next
+	<button {{ action "saveAndShowNextQuestion" (sum model.id) }} >Next
 	</button>
 	{{ else }}
-	<button {{ action "showResult"}}> Next</button>
+	<button {{ action "saveAndShowResult"}}> Next</button>
 	{{/if}}
 	{{/if}}
 </div>
 <div>
 	{{#if (compare-int (sum model.id) '<' 4) }}
-	<button {{ action "showNextQuestion" (sum model.id )}}> Pass
+	<button {{ action "dontSaveAndShowNextQuestion" (sum model.id )}}> Pass
 	</button>
 	{{ else }}
-	 <button {{ action "showResult"}}> Pass </button>
+	 <button {{ action "dontSaveAndShowResult"}}> Pass </button>
 	{{/if}}
 </div>
 <div>
