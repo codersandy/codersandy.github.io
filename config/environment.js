@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'testapp',
     environment: environment,
-    rootURL: '/',
+    rootURL: '/codersandy',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
