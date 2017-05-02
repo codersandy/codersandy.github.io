@@ -1,0 +1,52 @@
+<h2 class="title" style="font-size: 25px;">Question {{model.id}}. {{model.question}}
+</h2>
+<div>
+	<style>
+		button {background-color:#3399ff;
+		border-radius:20px;
+		border-size:2px;
+		color: black;
+		font-style: verdana;
+		padding: 12px 23px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 15px;cursor:pointer}
+	</style>
+	
+	
+		<input id = "test1" type="radio" name="options" value=model.option1 {{ action "setAnswer" model.option1 }}>
+		<label class="labels" for="test1"style="font-size: 20px;">	{{model.option1}}
+	</label>
+	<label style="font-size: 20px;">
+		<input type="radio" id="test" name="options" value=model.option2 {{ action "setAnswer" model.option2 }}>
+			{{model.option2}}
+	</label>
+	<label style="font-size: 20px;">
+		<input type="radio" id="test3" name="options" value=model.option3  {{ action "setAnswer" model.option3 }}>
+			{{model.option3}}
+	</label>
+	
+
+</div>
+<div>
+	{{#if selected}}
+	{{#if (compare-int (sum model.id) '<' 4) }}
+	<button {{ action "saveAndShowNextQuestion" (sum model.id) }} >Next
+	</button>
+	{{ else }}
+	<button {{ action "saveAndShowResult"}}> Next</button>
+	{{/if}}
+	{{/if}}
+</div>
+<div>
+	{{#if (compare-int (sum model.id) '<' 4) }}
+	<button {{ action "dontSaveAndShowNextQuestion" (sum model.id )}}> Pass
+	</button>
+	{{ else }}
+	 <button {{ action "dontSaveAndShowResult"}}> Pass </button>
+	{{/if}}
+</div>
+<div>
+	<button {{ action "goHome" }}> Quit </button>
+</div>

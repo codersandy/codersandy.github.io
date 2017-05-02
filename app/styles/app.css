@@ -1,0 +1,137 @@
+h1.appname {
+  font-size: 35px;
+  line-height: 50px;
+  text-align: center;
+  font-family: trebuchet;
+}
+
+h1.appname span {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #80d4ff;
+  background-color: #484848;
+}
+
+.usernameWrapper {
+  margin-top: 200px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 250px;
+  left: 0px;
+  right: 0px;
+}
+
+button.selectBottom {
+  background-color: #dcdcdc;
+  border-radius: 25px;
+  border-size: 2px;
+  color: black;
+  font-style: verdana;
+  padding: 4px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+button.selectStart {
+  background-color: #dcdcdc;
+  border-radius: 25px;
+  border-size: 2px;
+  color: black;
+  font-style: verdana;
+  padding: 4px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.answerChoice {
+  background-color: #383838;
+  border: none;
+  display: inline-block;
+  color: #dcdcdc;
+  font-style: verdana;
+  padding: 8px 20px;
+  text-align: center;
+  width: 400px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.answerChoice:hover {
+  background-color: #a0a0a0
+}
+
+.answerChoice:active {
+  background-color: #a0a0a0 cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.placeLeft {
+  display: inline-block;
+  background-color: #181818;
+  color: #a8a8a8;
+  border: none;
+  font-style: verdana;
+  font-size: 15px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  left: 25%;
+  margin-left: -50px;
+}
+
+.placeRight {
+  background-color: #181818;
+  color: #a8a8a8;
+  border: none;
+  font-style: verdana;
+  font-size: 15px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  right: 25%;
+  margin-right: -50px;
+}
+
+.placeBottomCenter {
+  background-color: #dcdcdc;
+  border-radius: 25px;
+  border-size: 2px;
+  color: black;
+  font-style: verdana;
+  padding: 4px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -5px;
+}
+
+.results {
+  color: #e8e8e8;
+  font-style: italic;
+}
+
+.scoreBox {
+  width: 200px;
+  padding: 10px;
+  border: 2px solid gray;
+  display: inline-block;
+  margin-top: 50px;
+}

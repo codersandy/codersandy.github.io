@@ -8,6 +8,7 @@ export default Ember.Controller.extend({
 
             }
             sessionStorage.setItem('totalScore', this.get('score'));
+            sessionStorage.setItem('answered',parseInt(this.get('answeredQues')+1));
             this.set('selected', false);
             this.transitionToRoute('results');
             console.log(this.get('score'));
@@ -23,12 +24,14 @@ export default Ember.Controller.extend({
         },
         saveAndShowNextQuestion(id) {
             console.log(sessionStorage.getItem('totalScore'));
+
             if (id == 2) {
+              this.set('answeredQues', parseInt(sessionStorage.getItem('answered')) + 1);
                 this.set('score', sessionStorage.getItem('totalScore'));
             }
+            this.set('answeredQues', parseInt(this.get('answeredQues')+1));
             if (this.get('model.answer') == this.get('selectedAnswer')) {
                 this.set('score', parseInt(this.get('score')) + 1);
-
             }
             this.set('selected', false);
             this.transitionToRoute('questions.q1', id);

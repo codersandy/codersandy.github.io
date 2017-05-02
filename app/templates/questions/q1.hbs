@@ -1,50 +1,31 @@
-<h2 class="title" style="font-size: 25px;">Question {{model.id}}. {{model.question}}
-</h2>
+<h2 style="font-size:20px;color:#dcdcdc;font-style:Courier, 'Lucida Console', monospace"> {{model.question}}</h2>
 <div>
-	<style>
-		button {background-color:#3399ff;
-		border-radius:20px;
-		border-size:2px;
-		color: black;
-		font-style: verdana;
-		padding: 12px 23px;
-		text-align: center;
-		text-decoration: none;
-		display: inline-block;
-		font-size: 15px;cursor:pointer}
-	</style>
-	<label style="font-size: 20px;">
-		<input type="radio" name="options" value=model.option1 {{ action "setAnswer" model.option1 }}>
-			{{model.option1}}
-	</label>
-	<label style="font-size: 20px;">
-		<input type="radio" name="options" value=model.option2 {{ action "setAnswer" model.option2 }}>
-			{{model.option2}}
-	</label>
-	<label style="font-size: 20px;">
-		<input type="radio" name="options" value=model.option3 {{ action "setAnswer" model.option3 }}>
-			{{model.option3}}
-	</label>
-
+	<button class="answerChoice" {{ action "setAnswer" model.option1}}>{{model.option1}}
+</button>
+	<br> <br>
+	<button class="answerChoice" {{ action "setAnswer" model.option2}}>{{model.option2}}
+</button>
+	<br> <br>
+	<button class="answerChoice" {{ action "setAnswer" model.option3}}>{{model.option3}}
+</button>
+	<br>
+	<br>
 </div>
+
 <div>
 	{{#if selected}}
-	{{#if (compare-int (sum model.id) '<' 4) }}
-	<button {{ action "saveAndShowNextQuestion" (sum model.id) }} >Next
-	</button>
-	{{ else }}
-	<button {{ action "saveAndShowResult"}}> Next</button>
-	{{/if}}
+		{{#if (compare-int (sum model.id) '<' 4) }}
+			<input type="button" value="Next" class="placeBottomCenter" {{ action "saveAndShowNextQuestion" (sum model.id) }}> {{ else }}
+			<input type="button" value="Next" class="placeBottomCenter" {{ action "saveAndShowResult"}}>
+		{{/if}}
 	{{/if}}
 </div>
 <div>
 	{{#if (compare-int (sum model.id) '<' 4) }}
-	<button {{ action "dontSaveAndShowNextQuestion" (sum model.id )}}> Pass
-	</button>
-	{{ else }}
-	 <button {{ action "dontSaveAndShowResult"}}> Pass </button>
+		<input type="button" value="Pass  &gt;" class="placeRight" {{ action "dontSaveAndShowNextQuestion" (sum model.id )}}> {{ else }}
+		<input type="button" value="Pass  &gt;" class="placeRight" {{ action "dontSaveAndShowResult" (sum model.id )}}>
 	{{/if}}
 </div>
 <div>
-	<button {{ action "goHome" }}> Quit </button>
+	<input type="button" value="&lt;  Quit" class="placeLeft" {{ action "goHome" }}>
 </div>

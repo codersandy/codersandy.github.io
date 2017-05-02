@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
 		saveUser() {
 			sessionStorage.setItem('name', this.get('firstName'));
 			sessionStorage.setItem('totalScore',0);
+			sessionStorage.setItem('answered',0);
 			console.log(this.get('firstName'));
 			this.transitionToRoute('questions.q1',1);
 		}}

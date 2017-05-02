@@ -1,24 +1,17 @@
-<div>
-	<h1>RESULTS</h1>
-	<p>
-		Congratulations.
-		<br> Your score is
-	</p>
-	{{ totalScore}}
+<h1 class="appname">
+	<span>Q</span>
+	<span>U</span>
+	<span>I</span>
+	<span>Z</span>
+</h1>
+<h2 style="color:#80d4ff">Results</h2>
+<div class="scoreBox">
+	<h3 class="results"> Congratulations!</h3>
+	<h2 class="results"> Your Score is <br></h2>
+	<h1 class="results">{{ totalScore}}</h1>
 </div>
-<div>
-	<style>
-		button {background-color:#3399ff;
-			border-radius:20px;
-			border-size:2px;
-			color: black;
-			font-style: verdana;
-			padding: 12px 23px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 15px;cursor:pointer}
-	</style>
-	<button {{ action "showFirstQuestion" }}> Play Again</button>
-	<button {{ action "goHome" }}>New Game</button>
+<h2 style="color:#80d4ff">{{answered}}</h2>
+<div class="footer">
+	<button class="selectStart" {{ action "showFirstQuestion" }}> Play Again</button> <br>
+	<br> <button class="selectBottom" {{ action "goHome" }}>New Game</button>
 </div>
