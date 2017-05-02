@@ -2,7 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     setupController(controller, model) {
-        var test = sessionStorage.getItem('totalScore');
-        controller.set('totalScore', test);
+        var score = sessionStorage.getItem('totalScore');
+        controller.set('totalScore', score);
+	var questionsAns = sessionStorage.getItem('answered');
+	controller.set('answered',questionsAns);
     }
 });

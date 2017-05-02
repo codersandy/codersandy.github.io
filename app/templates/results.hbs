@@ -10,7 +10,10 @@
 	<h2 class="results"> Your Score is <br></h2>
 	<h1 class="results">{{ totalScore}}</h1>
 </div>
-<h2 style="color:#80d4ff">{{answered}}</h2>
+<div>
+	<h2 style="color:#80d4ff;display:inline-block" >{{ answered}}</h2>
+	<span class="results">/3</span>
+</div>
 <div class="footer">
 	<button class="selectStart" {{ action "showFirstQuestion" }}> Play Again</button> <br>
 	<br> <button class="selectBottom" {{ action "goHome" }}>New Game</button>
