@@ -6,7 +6,7 @@
 </h1>
 <div class="usernameWrapper">
 	<label for="username" style="color:#dcdcdc;font-family:verdana">Enter your name</label><br/>
-	<input type="text" size="50" style="background-color:#383838;padding: 10px 50px;border-radius:45px;border-size:60px;border:none;bottom:10px">
+	<input type="text" size="50" class="username">
 </div>
 <div class="footer">
 	<div>
@@ -15,9 +15,8 @@
 	 </button>
 	</div>
 	<div>
-		<button class="selectBottom"> {{#link-to 'help'}}
+		<button class="selectBottom" {{action "gotoHelp"}}>
 Help
-{{/link-to}}
 </button>
 	</div>
 </div>
