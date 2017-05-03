@@ -3,27 +3,25 @@
 	<span style="margin-right:-60%;">Weight 1</span>
 </div>
 <br>
-<h2 class="question" > {{model.question}}</h2>
+<h2 class="question"> {{model.questionText}}</h2>
+
 <div>
-	<button class="answerChoice" {{ action "setAnswer" model.option1}}>{{model.option1}}
+	{{#each model.options as |option|}}
+		<button class="answerChoice" {{ action "setAnswer" option.name}}>{{option.name}}
 </button>
-	<br> <br>
-	<button class="answerChoice" {{ action "setAnswer" model.option2}}>{{model.option2}}
-</button>
-	<br> <br>
-	<button class="answerChoice" {{ action "setAnswer" model.option3}}>{{model.option3}}
-</button>
+		<br> <br>
+	{{/each}}
 </div>
 <div>
 	{{#if selected}}
-<input type="button" value="Next" class="placeBottomCenter"  {{ action "saveAndShowNextQuestion" (sum model.id) }}>
-{{else}}
-<input type="button" value="Next" class="placeBottomCenter" disabled {{ action "saveAndShowNextQuestion" (sum model.id) }}>
-{{/if}}
+		<input type="button" value="Next" class="placeBottomCenter" {{ action "saveAndShowNextQuestion" (sum model.id) }}>
+	{{else}}
+		<input type="button" value="Next" class="placeBottomCenter" disabled {{ action "saveAndShowNextQuestion" (sum model.id) }}>
+	{{/if}}
 
 </div>
 <div>
-		<input type="button" value="Pass  &gt;" class="placeRight" {{ action "dontSaveAndShowNextQuestion" (sum model.id )}}>
+	<input type="button" value="Pass  &gt;" class="placeRight" {{ action "dontSaveAndShowNextQuestion" (sum model.id )}}>
 </div>
 <div>
 	<input type="button" value="&lt;  Quit" class="placeLeft" {{ action "goHome" }}>
